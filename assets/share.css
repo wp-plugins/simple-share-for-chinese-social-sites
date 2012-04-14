@@ -1,0 +1,29 @@
+#share_block {
+	width: 320px;
+	padding: 10px 5px;
+}
+
+ul#share_menu {
+	list-style: none;
+	display: none;
+}
+
+#share_menu li {
+	width: 100px;
+	padding: 5px;
+	float: left;
+	background-image: none;
+}
+
+#share_menu span.share_image {
+	width: 16px;
+	height: 16px;
+	float: left;
+}
+
+#share_menu span.share_title {
+	float: left;
+	width: 65px;
+	margin-left: 12px;
+	margin-top: 10px;
+}
