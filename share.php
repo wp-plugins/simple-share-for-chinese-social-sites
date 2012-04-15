@@ -29,7 +29,7 @@ function share($content) {
 	$title = single_post_title('', FALSE);
 	$title = str_replace("'", "\'", $title);
 	$url = "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-	$path = site_url('/wp-content/plugins/share/assets/');
+	$path = site_url('/wp-content/plugins/simple-share-for-chinese-social-sites/assets/');
 
 	$social_sites = array(
 		'bookmark' => array(
