@@ -1,12 +1,14 @@
 === Simple Share For Chinese Social Sites ===
 Contributors: angelazou
 Donate link: http://blog.centilin.com/
-Tags: share, baidu, sina, weibo, facebook, delicious, google reader, 163, bookmark, gmail, google buzz, myspace, renren, 
+Tags: share, baidu, sina, weibo, facebook, delicious, google reader, 163, bookmark, gmail, google buzz, myspace, renren, chinese social sites, social network, myspace, qq, twitter
 Requires at least: 2.0.2
-Tested up to: 3.3.1
-Stable tag: 120414
+Tested up to: 3.3.2
+Stable tag: 120514
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This is a simplified version of the Sinoshare plugin with 40 sharing options. Increase social networking with your Chinese audience.
+Simplified version of Sinoshare plugin with 40 sharing options. Increase social networking with your Chinese audience.
 
 == Description ==
 
@@ -19,7 +21,17 @@ Support is provided at [my blog](http://blog.centilin.com/). You can also view p
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. You are good to go
 
+== Screenshots ==
+
+1. Back-end options page
+
 == Changelog ==
+
+= 120514 =
+
+* Options page to handle settings
+* Allow custom CSS styling directly in the options page
+* Added default styling for the share link
 
 = 120414 =
 
