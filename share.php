@@ -3,7 +3,7 @@
 Plugin Name: Simple Share For Chinese Social Sites
 Plugin URI: http://blog.centilin.com/everything_it/web-design/wordpress/simple-share-for-chinese-social-sites/ ‎
 Description: This is a simplified version of the Sinoshare plugin with 40 sharing options. I have converted the plugin so it runs as jQuery instead of Prototype. After installation, you will see a 分享此文章 at the end of the content. Next version will include a shortcode and more configuration options.
-Version: 120514
+Version: 120515
 Author: Angela Zou
 Author URI: http://blog.centilin.com
     Copyright 2010  Angela Zou  (email : angela380in@hotmail.com)
@@ -94,6 +94,11 @@ function simple_share_admin_output() {
 //Core Code
 add_filter('the_content', 'share');
 function share($content) {
+	$title = single_post_title('', FALSE);
+	$title = str_replace("'", "\'", $title);
+	$url = "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+	$path = site_url('/wp-content/plugins/simple-share-for-chinese-social-sites/assets/');
+
 	$social_sites = array(
 		'bookmark' => array(
 			'name' => '收藏夹'
@@ -265,10 +270,8 @@ function share($content) {
 				jQuery("a#share_link").click(function () {
 					jQuery("ul#share_menu").slideToggle("medium");
 				});
-			});
-
-			jQuery(document).ready(function(){
-				jQuery("a.jQueryBookmark").click(function(e){
+				
+					jQuery("a.jQueryBookmark").click(function(e){
 					e.preventDefault();
 					var bookmarkUrl = this.href;
 					var bookmarkTitle = this.title;
@@ -286,6 +289,10 @@ function share($content) {
 						return false;
 					}
 				});
+
+			});
+
+			jQuery(document).ready(function(){
 			});
 		</script>';
 	if(get_option("simple_share_default_styling") == '1') { //If using default styling
@@ -347,11 +354,6 @@ function share($content) {
 	} else {
 		$output .= '<style type="text/css">' . get_option("simple_share_custom_css") . '</style>';
 	}
-
-	$title = single_post_title('', FALSE);
-	$title = str_replace("'", "\'", $title);
-	$url = "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-	$path = site_url('/wp-content/plugins/simple-share-for-chinese-social-sites/assets/');
 	
 	$output .= '<div id="share_block"><h4><a href="#share_link" name="share_link" id="share_link" title="' . $title . '">' . get_option("simple_share_text") . '</a></h4><ul id="share_menu">';
 	foreach ($social_sites as $key => $value) {
